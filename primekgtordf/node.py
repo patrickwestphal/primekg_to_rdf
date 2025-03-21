@@ -118,7 +118,7 @@ class Node:
     def get_uri(self):
         return URIRef(PRIMEKG_URI_PREFIX + 'node/' + self.node_id)
 
-    def to_rdf(self):
+    def to_rdf(self) -> Graph:
         # TODO: generic URIs or URIs based on source namespace???
         node_uri = self.get_uri()
         source_uri = URIRef(self.node_source.value)
@@ -163,5 +163,5 @@ class NodesReader:
 
                 self._nodes_by_index[node_index] = node
 
-    def get_node_by_index(self, node_index: int):
+    def get_node_by_index(self, node_index: int) -> Node:
         return self._nodes_by_index[node_index]
