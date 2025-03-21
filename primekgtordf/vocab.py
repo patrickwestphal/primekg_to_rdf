@@ -98,6 +98,26 @@ anatomy_absent_protein_interaction_cls = \
 has_source = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_source')
 has_node_id = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_node_id')
 
+# TODO: add property axioms
+has_mondo_id = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_mondo_id')
+# TODO: add property axioms
+has_mondo_name = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_mondo_name')
+# TODO: add property axioms
+has_group_name_bert = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_group_name_bert')
+# TODO: add property axioms
+has_mondo_definition = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_mondo_definition')
+# TODO: add property axioms
+has_umls_description = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_umls_description')
+
+# TODO: add property axioms
+has_orphanet_definition = URIRef(
+    PRIMEKG_URI_PREFIX + 'vocab/has_orphanet_definition'
+)
+
+# TODO: add property axioms
+has_orphanet_clinical_description = URIRef(
+    PRIMEKG_URI_PREFIX + 'vocab/has_orphanet_clinical_description'
+)
 
 class UnknownVocabularyElementException(Exception):
     pass
