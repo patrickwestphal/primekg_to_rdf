@@ -3,7 +3,6 @@ import logging
 
 from rdflib import Graph, Literal
 
-from primekgtordf import PRIMEKG_URI_PREFIX
 from primekgtordf.node import NodesReader
 from primekgtordf.vocab import has_mondo_id, has_mondo_name, has_group_name_bert, has_mondo_definition, \
     has_umls_description, has_orphanet_definition, has_orphanet_clinical_description
