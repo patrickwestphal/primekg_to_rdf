@@ -98,26 +98,22 @@ anatomy_absent_protein_interaction_cls = \
 has_source = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_source')
 has_node_id = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_node_id')
 
-# TODO: add property axioms
 has_mondo_id = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_mondo_id')
-# TODO: add property axioms
 has_mondo_name = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_mondo_name')
-# TODO: add property axioms
 has_group_name_bert = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_group_name_bert')
-# TODO: add property axioms
 has_mondo_definition = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_mondo_definition')
-# TODO: add property axioms
 has_umls_description = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_umls_description')
 
-# TODO: add property axioms
 has_orphanet_definition = URIRef(
     PRIMEKG_URI_PREFIX + 'vocab/has_orphanet_definition'
 )
 
-# TODO: add property axioms
 has_orphanet_clinical_description = URIRef(
     PRIMEKG_URI_PREFIX + 'vocab/has_orphanet_clinical_description'
 )
+
+has_drug_description = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_drug_description')
+
 
 class UnknownVocabularyElementException(Exception):
     pass
@@ -201,6 +197,38 @@ def get_vocab_triples():
     g.add((has_node_id, RDF.type, OWL.DatatypeProperty))
     g.add((has_node_id, RDFS.domain, node_cls))
     g.add((has_node_id, RDFS.range, XSD.string))
+
+    g.add((has_mondo_id, RDF.type, OWL.DatatypeProperty))
+    g.add((has_mondo_id, RDFS.domain, node_cls))
+    g.add((has_mondo_id, RDFS.range, XSD.string))
+
+    g.add((has_mondo_name, RDF.type, OWL.DatatypeProperty))
+    g.add((has_mondo_name, RDFS.domain, node_cls))
+    g.add((has_mondo_name, RDFS.range, XSD.string))
+
+    g.add((has_group_name_bert, RDF.type, OWL.DatatypeProperty))
+    g.add((has_group_name_bert, RDFS.domain, node_cls))
+    g.add((has_group_name_bert, RDFS.range, XSD.string))
+
+    g.add((has_mondo_definition, RDF.type, OWL.DatatypeProperty))
+    g.add((has_mondo_definition, RDFS.domain, node_cls))
+    g.add((has_mondo_definition, RDFS.range, XSD.string))
+
+    g.add((has_umls_description, RDF.type, OWL.DatatypeProperty))
+    g.add((has_umls_description, RDFS.domain, node_cls))
+    g.add((has_umls_description, RDFS.range, XSD.string))
+
+    g.add((has_orphanet_definition, RDF.type, OWL.DatatypeProperty))
+    g.add((has_orphanet_definition, RDFS.domain, node_cls))
+    g.add((has_mondo_definition, RDFS.range, XSD.string))
+
+    g.add((has_orphanet_clinical_description, RDF.type, OWL.DatatypeProperty))
+    g.add((has_orphanet_clinical_description, RDFS.domain, node_cls))
+    g.add((has_orphanet_clinical_description, RDFS.range, XSD.string))
+
+    g.add((has_drug_description, RDF.type, OWL.DatatypeProperty))
+    g.add((has_drug_description, RDFS.domain, node_cls))
+    g.add((has_drug_description, RDFS.range, XSD.string))
 
     for prop_abbrv_str in _known_property_abbreviations:
         prop = get_property(prop_abbrv_str)
