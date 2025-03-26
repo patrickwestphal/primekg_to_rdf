@@ -96,7 +96,7 @@ anatomy_absent_protein_interaction_cls = \
     URIRef(PRIMEKG_URI_PREFIX + 'vocab/AnatomyAbsentProteinInteraction')
 
 has_source = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_source')
-has_node_id = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_node_id')
+has_node_name = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_node_name')
 
 has_mondo_id = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_mondo_id')
 has_mondo_name = URIRef(PRIMEKG_URI_PREFIX + 'vocab/has_mondo_name')
