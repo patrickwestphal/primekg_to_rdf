@@ -144,7 +144,10 @@ _known_property_abbreviations = [
 def get_property(property_abbrv_str: str):
     if property_abbrv_str not in _known_property_abbreviations:
         raise UnknownVocabularyElementException()
-    return URIRef(PRIMEKG_URI_PREFIX + 'vocab/' + quote(property_abbrv_str))
+    return URIRef(
+        PRIMEKG_URI_PREFIX + 'vocab/' +
+        quote(property_abbrv_str.replace(' ', '_'))
+    )
 
 
 def get_vocab_triples():
