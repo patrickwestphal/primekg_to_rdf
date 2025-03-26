@@ -7,7 +7,7 @@ from rdflib import URIRef, Literal, XSD, Graph, RDF, OWL
 
 from primekgtordf import PRIMEKG_URI_PREFIX, NCBI_PREFIX, DRUGBANK_PREFIX, HPO_PREFIX, MONDO_PREFIX, GO_PREFIX, \
     CTD_PREFIX, REACTOME_PREFIX, UBERON_PREFIX
-from primekgtordf.vocab import has_source, has_node_id, node_cls, source_cls
+from primekgtordf.vocab import has_source, has_node_name, node_cls, source_cls
 
 logger = logging.getLogger(__name__)
 
@@ -123,7 +123,7 @@ class Node:
         node_uri = self.get_uri()
         source_uri = URIRef(self.node_source.value)
         class_uri = URIRef(self.node_type.value)
-        node_id = Literal(self.node_name, None, XSD.string)
+        node_name_literal = Literal(self.node_name, 'en')
 
         g = Graph()
         g.add((node_uri, has_source, source_uri))
@@ -131,7 +131,7 @@ class Node:
         g.add((node_uri, RDF.type, class_uri))
         g.add((node_uri, RDF.type, node_cls))
         g.add((class_uri, RDF.type, OWL.Class))
-        g.add((node_uri, has_node_id, node_id))
+        g.add((node_uri, has_node_name, node_name_literal))
 
         return g
 
