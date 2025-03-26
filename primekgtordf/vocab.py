@@ -197,9 +197,9 @@ def get_vocab_triples():
     g.add((has_source, RDFS.domain, OWL.Class))
     g.add((has_source, RDFS.range, source_cls))
 
-    g.add((has_node_id, RDF.type, OWL.DatatypeProperty))
-    g.add((has_node_id, RDFS.domain, node_cls))
-    g.add((has_node_id, RDFS.range, XSD.string))
+    g.add((has_node_name, RDF.type, OWL.DatatypeProperty))
+    g.add((has_node_name, RDFS.domain, node_cls))
+    g.add((has_node_name, RDFS.range, XSD.string))
 
     g.add((has_mondo_id, RDF.type, OWL.DatatypeProperty))
     g.add((has_mondo_id, RDFS.domain, node_cls))
